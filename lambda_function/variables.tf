@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 variable "vpc_config" {
-  type = "map"
+  type = map
 
   default = {
     subnet_ids         = ""
@@ -13,20 +13,20 @@ variable "vpc_config" {
 }
 
 variable "tags" {
-  type    = "map"
+  type    = map
   default = {}
 }
 
 variable "function_name" {
-  type = "string"
+  type = string
 }
 
 variable "description" {
-  type = "string"
+  type = string
 }
 
 variable "runtime" {
-  type = "string"
+  type = string
 }
 
 variable "publish" {
@@ -34,25 +34,25 @@ variable "publish" {
 }
 
 variable "handler" {
-  type = "string"
+  type = string
 }
 
 variable "filename" {
-  type    = "string"
+  type    = string
   default = ""
 }
 
 variable "environment_variables" {
-  type = "map"
+  type = map
 }
 
 variable "source_mappings" {
-  type    = "list"
+  type    = list
   default = []
 }
 
 variable "trigger_schedule" {
-  type = "map"
+  type = map
 
   default = {
     enabled = false
@@ -60,7 +60,7 @@ variable "trigger_schedule" {
 }
 
 variable "sns_topic_subscription" {
-  type = "map"
+  type = map
 
   default = {
     enabled = false
@@ -68,12 +68,12 @@ variable "sns_topic_subscription" {
 }
 
 variable "policies" {
-  type    = "list"
+  type    = list
   default = []
 }
 
 variable "permissions" {
-  type = "map"
+  type = map
 
   default = {
     enabled = false
@@ -81,7 +81,7 @@ variable "permissions" {
 }
 
 variable "bucket_trigger" {
-  type = "map"
+  type = map
 
   default = {
     enabled = false
@@ -89,11 +89,11 @@ variable "bucket_trigger" {
 }
 
 variable "memory_size" {
-  type = "string"
+  type = string
 }
 
 variable "timeout" {
-  type = "string"
+  type = string
 }
 
 variable "create_empty_function" {
