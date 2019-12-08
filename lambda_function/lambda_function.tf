@@ -4,7 +4,7 @@ resource "aws_lambda_function" "lambda" {
   role                           = aws_iam_role.lambda.arn
   handler                        = var.handler
   runtime                        = var.runtime
-  filename                       = "${var.create_empty_function ? "${path.module}/placeholder.zip" : var.filename}"
+  filename                       = var.create_empty_function ? "${path.module}/placeholder.zip" : var.filename
   timeout                        = var.timeout
   memory_size                    = var.memory_size
   reserved_concurrent_executions = var.reserved_concurrent_executions
