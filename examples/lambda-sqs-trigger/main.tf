@@ -3,7 +3,7 @@ resource "aws_sqs_queue" "lambda_example" {
 }
 
 locals {
-  arn = "${aws_sqs_queue.lambda_example.arn}"
+  arn = aws_sqs_queue.lambda_example.arn
 }
 
 module "sqs_trigger" {

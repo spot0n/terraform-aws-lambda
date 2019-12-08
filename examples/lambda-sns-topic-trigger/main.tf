@@ -22,6 +22,6 @@ module "sns_trigger" {
 
   sns_topic_subscription = {
     enabled       = true
-    sns_topic_arn = "${aws_sns_topic.example.arn}"
+    sns_topic_arn = aws_sns_topic.example.arn
   }
 }

@@ -36,7 +36,7 @@ module "lambda_s3_trigger" {
 
   bucket_trigger = {
     enabled = true
-    bucket  = "${aws_s3_bucket.example.bucket}"
+    bucket  = aws_s3_bucket.example.bucket
   }
 
   permissions = {
