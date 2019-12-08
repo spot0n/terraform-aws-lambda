@@ -1,14 +1,14 @@
 resource "aws_lambda_function" "lambda" {
-  function_name                  = "${var.function_name}"
-  description                    = "${var.description}"
-  role                           = "${aws_iam_role.lambda.arn}"
-  handler                        = "${var.handler}"
-  runtime                        = "${var.runtime}"
+  function_name                  = var.function_name
+  description                    = var.description
+  role                           = aws_iam_role.lambda.arn
+  handler                        = var.handler
+  runtime                        = var.runtime
   filename                       = "${var.create_empty_function ? "${path.module}/placeholder.zip" : var.filename}"
-  timeout                        = "${var.timeout}"
-  memory_size                    = "${var.memory_size}"
-  reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
-  publish                        = "${var.publish}"
+  timeout                        = var.timeout
+  memory_size                    = var.memory_size
+  reserved_concurrent_executions = var.reserved_concurrent_executions
+  publish                        = var.publish
 
   vpc_config {
     subnet_ids         = ["${var.vpc_config["subnet_ids"]}"]
@@ -16,10 +16,10 @@ resource "aws_lambda_function" "lambda" {
   }
 
   environment {
-    variables = "${var.environment_variables}"
+    variables = var.environment_variables
   }
 
-  tags = "${var.tags}"
+  tags = var.tags
 
   lifecycle {
     ignore_changes = [
