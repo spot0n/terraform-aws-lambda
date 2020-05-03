@@ -103,3 +103,8 @@ variable "create_empty_function" {
 variable "reserved_concurrent_executions" {
   default = "-1"
 }
+
+variable "tracing_mode" {
+  type    = string
+  default = "PassThrough"
+}

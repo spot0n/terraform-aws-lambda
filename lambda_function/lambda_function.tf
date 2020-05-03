@@ -26,4 +26,8 @@ resource "aws_lambda_function" "lambda" {
       filename,
     ]
   }
+
+  tracing_config {
+    mode = var.tracing_mode
+  }
 }
