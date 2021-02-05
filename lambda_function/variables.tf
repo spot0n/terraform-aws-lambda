@@ -108,3 +108,8 @@ variable "tracing_mode" {
   type    = string
   default = "PassThrough"
 }
+
+variable "log_retention" {
+  default     = 30
+  description = "Number of days for log retention"
+}

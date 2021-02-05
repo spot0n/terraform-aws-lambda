@@ -30,4 +30,14 @@ resource "aws_lambda_function" "lambda" {
   tracing_config {
     mode = var.tracing_mode
   }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.lambda_logs,
+    aws_cloudwatch_log_group.log,
+  ]
+}
+
+resource "aws_cloudwatch_log_group" "log" {
+  name              = "/aws/lambda/${var.function_name}"
+  retention_in_days = var.log_retention
 }
